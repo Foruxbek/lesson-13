@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    position: relative;
+
+}
+.box::before{
+    content: "Hello";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    left: 20px;
+    top: 40px;
+
+}
+.box::after{
+    content: " good by";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    left: -250px;
+    top: 60px;
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+} 
+ .demo{
+    width: 100%;
+    height: 100px;
+    background-color: dodgerblue;
+}
+.collection{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 30px;
+    color: #fff;
+    font-family: sans-serif;
+    list-style-type: none;
+}
+.item{
+    position: relative;
+}
+.item::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: -4px;
+    background-color: #fff;
+    transition: 0.7s;
+    transform: scale(0);
+}
+.item:hover::before{
+    transform: scale(1);
+}
+.card{
+    width: 300px;
+    height: 400px;
+    background-color: dodgerblue;
+    border-radius: 10px;
+}
+.card_image{
+    width: 90%;
+    height: 150px;
+    background-color: grey;
+    margin: 10px auto;
+    background-image: url(./photo_2022-02-10_23-04-15.jpg);
+    background-size: cover;
+    position: relative;
+}
+.card_image::before{
+    content: "$40";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.493);
+    opacity: 0;
+    transition: 0.6s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+}
+.card_image:hover::before{
+    opacity: 1;
+}
+button{
+    position: relative;
+}
+button:focus .demo{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 0, 0, 0.425);
+
+
+}
